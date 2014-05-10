@@ -1,0 +1,4 @@
+sea_twi_base:
+    resource: "@SeaTwiBaseBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,3 @@
+sea_twi_base_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SeaTwiBaseBundle:Default:index }
