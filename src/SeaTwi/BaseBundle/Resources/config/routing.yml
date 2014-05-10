@@ -1,3 +1,23 @@
 sea_twi_base_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: SeaTwiBaseBundle:Default:index }
+
+hashtag_index:
+    pattern: /hashtag
+    defaults: { _controller: SeaTwiBaseBundle:Hashtag:index }
+
+hashtag_edit:
+    pattern: /hashtag/{iId}/edit
+    defaults: { _controller: SeaTwiBaseBundle:Hashtag:edit }
+
+hashtag_delete:
+    pattern: /hashtag/{iId}/delete
+    defaults: { _controller: SeaTwiBaseBundle:Hashtag:delete }
+
+tweet_index:
+    pattern: /tweet
+    defaults: { _controller: SeaTwiBaseBundle:Tweet:index }
+
+tweet_show:
+    pattern: /tweet/{sHashtag}
+    defaults: { _controller: SeaTwiBaseBundle:Tweet:show }
