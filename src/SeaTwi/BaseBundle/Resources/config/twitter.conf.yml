@@ -1,0 +1,9 @@
+# twitter.conf.yml
+parameters:
+  twitter.baseurl: https://api.twitter.com/1.1
+
+  twitter.config:
+    consumer_key: "%twitter_consumer_key%"
+    consumer_secret: "%twitter_consumer_secret%"
+    token: "%twitter_token%"
+    token_secret: "%twitter_token_secret%"

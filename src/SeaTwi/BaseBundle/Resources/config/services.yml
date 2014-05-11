@@ -1,3 +1,7 @@
+imports:
+- { resource: twitter.conf.yml }
+- { resource: twitter.yml }
+
 parameters:
 #    sea_twi_base.example.class: SeaTwi\BaseBundle\Example
 
