@@ -9,7 +9,7 @@
     <div class="form-group">
         {{ form_label(form.name, 'Add new hashtag') }}
         {{ form_errors(form.name) }}
-        {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder': '#hashtag' }}) }}
+        {{ form_widget(form.name) }}
     </div>
     {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-default' }}) }}
     {{ form_end(form) }}
@@ -17,7 +17,7 @@
 
     <h1>Hashtag list</h1>
 
-    <table class="records_list">
+    <table class="table">
         <thead>
         <tr>
             <th>Name</th>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>{% block title %}{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 
     <!-- Bootstrap -->
     <link href="{{ asset('bundles/seatwibase/css/bootstrap.css') }}" rel="stylesheet">
@@ -28,21 +28,26 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">SeaTwi - Search Tweets</a>
+            <a class="navbar-brand" href="{{ path('sea_twi_base_homepage') }}">SeaTwi - Search Tweets</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="{{ path('hashtag') }}">Hashtags</a></li>
-                <li><a href="#tweets">Tweets</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'sea_twi_base_homepage' %}active{% endif %}"><a
+                            href="{{ path('sea_twi_base_homepage') }}">Home</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'hashtag' %}active{% endif %}"><a
+                            href="{{ path('hashtag') }}">Hashtags</a></li>
+                <li class="{% if app.request.attributes.get('_route') == 'tweet' %}active{% endif %}"><a href="#tweets">Tweets</a>
+                </li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
     </div>
 </div>
 
 <div class="container">
     {% block body %}{% endblock %}
-</div><!-- /.container -->
+</div>
+<!-- /.container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

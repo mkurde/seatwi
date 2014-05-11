@@ -3,14 +3,14 @@
 {% block body -%}
     <h1>Hashtag edit</h1>
 
-    {{ form(edit_form) }}
+    {{ form_start(edit_form) }}
+    <div class="form-group">
+        {{ form_label(edit_form.name) }}
+        {{ form_errors(edit_form.name) }}
+        {{ form_widget(edit_form.name) }}
+    </div>
+    {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-default' }}) }}
+    {{ form_end(edit_form) }}
 
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('hashtag') }}">
-                Back to the list
-            </a>
-        </li>
-        <li>{{ form(delete_form) }}</li>
-    </ul>
+    {{ form(delete_form) }}
 {% endblock %}
