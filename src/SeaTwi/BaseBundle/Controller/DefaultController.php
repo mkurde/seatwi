@@ -9,11 +9,8 @@ class DefaultController extends Controller
     public function indexAction()
     {
         return $this->render('SeaTwiBaseBundle:Default:index.html.twig'
-			, array());
+            , array());
     }
-
-
-
 
 
 }

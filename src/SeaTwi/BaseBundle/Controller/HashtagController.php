@@ -73,7 +73,7 @@ class HashtagController extends Controller
         $form = $this->createForm(new HashtagType(), $entity, array(
             'action' => $this->generateUrl('hashtag_create'),
             'method' => 'POST',
-            'attr'=> array('class'=>'form-inline'),
+            'attr' => array('class' => 'form-inline'),
         ));
 
         $form->add('submit', 'submit', array('label' => 'Create'));
@@ -133,7 +133,7 @@ class HashtagController extends Controller
         $form = $this->createForm(new HashtagType(), $entity, array(
             'action' => $this->generateUrl('hashtag_update', array('id' => $entity->getId())),
             'method' => 'PUT',
-            'attr'=> array('class'=>'form-inline'),
+            'attr' => array('class' => 'form-inline'),
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
