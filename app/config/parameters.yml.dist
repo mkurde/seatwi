@@ -13,3 +13,8 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    twitter_consumer_key: **
+    twitter_consumer_secret: ***
+    twitter_token: ****
+    twitter_token_secret: ****

@@ -28,16 +28,19 @@ class SearchTwitterCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        /** @var $logger LoggerInterface */
-        $logger = $this->getContainer()->get('logger');
-
-
         $name = $input->getArgument('name');
-        $translator = $this->getContainer()->get('translator');
-        if ($name) {
-            $output->writeln($translator->trans('Hello %name%!', array('%name%' => $name)));
-        } else {
-            $output->writeln($translator->trans('Hello!'));
-        }
+
+        $twitterClient = $this->getContainer()->get('guzzle.twitter.client');
+        //$status = $twitterClient->get('statuses/user_timeline.json')->send()->getBody();
+
+        $_search = 'search/tweets.json?q=%23' . $name . '&result_type=mixed&count=4';
+        $status = $twitterClient->get($_search)->send()->getBody();
+
+        $oJsonObj = json_decode((string)$status);
+
+        var_dump($oJsonObj);
+
+
+        //$output->writeln($text);
     }
 }
