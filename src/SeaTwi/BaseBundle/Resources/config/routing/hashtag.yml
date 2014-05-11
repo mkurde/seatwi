@@ -1,0 +1,22 @@
+hashtag:
+    pattern:  /
+    defaults: { _controller: "SeaTwiBaseBundle:Hashtag:index" }
+
+hashtag_create:
+    pattern:  /create
+    defaults: { _controller: "SeaTwiBaseBundle:Hashtag:create" }
+    requirements: { _method: post }
+
+hashtag_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SeaTwiBaseBundle:Hashtag:edit" }
+
+hashtag_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SeaTwiBaseBundle:Hashtag:update" }
+    requirements: { _method: post|put }
+
+hashtag_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SeaTwiBaseBundle:Hashtag:delete" }
+    requirements: { _method: post|delete }

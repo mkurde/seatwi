@@ -1,7 +1,16 @@
-{% extends "::base.html.twig" %}
+{% extends '::base.html.twig' %}
 
-{% block title %}SeaTwiBaseBundle:Hashtag:edit{% endblock %}
+{% block body -%}
+    <h1>Hashtag edit</h1>
 
-{% block body %}
-<h1>Welcome to the Hashtag:edit page</h1>
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('hashtag') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
 {% endblock %}

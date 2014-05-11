@@ -1,7 +1,40 @@
-{% extends "::base.html.twig" %}
+{% extends '::base.html.twig' %}
+{% form_theme form with ['SeaTwiBaseBundle:Form:form_layout.html.twig'] %}
 
-{% block title %}SeaTwiBaseBundle:Hashtag:index{% endblock %}
+{% block body -%}
 
-{% block body %}
-<h1>Welcome to the Hashtag:index page</h1>
-{% endblock %}
+    <h1>Hashtags</h1>
+
+    {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.name, 'Add new hashtag') }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder': '#hashtag'}}) }}
+        </div>
+    {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-default'}}) }}
+    {{ form_end(form) }}
+
+
+    <h1>Hashtag list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.name }}</td>
+                <td>
+                    <a href="{{ path('hashtag_edit', { 'id': entity.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% endblock %}
