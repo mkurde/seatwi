@@ -6,7 +6,7 @@
         {% else %}
             {% set form_method = "POST" %}
         {% endif %}
-        <form name="{{ form.vars.name }}" method="{{ form_method|lower }}" role="form" action="{{ action }}"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
+        <form name="{{ form.vars.name }}" method="{{ form_method|lower }}" action="{{ action }}"{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
         {% if form_method != method %}
             <input type="hidden" name="_method" value="{{ method }}" />
         {% endif %}
@@ -30,7 +30,6 @@
                 {% for error in errors %}
                     {{ error.message }}
                 {% endfor %}
-            </ul>
             </span>
         {% endif %}
     {% endspaceless %}
